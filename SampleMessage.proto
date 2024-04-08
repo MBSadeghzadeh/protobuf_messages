@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+// Define the TemperatureData message for transferring temperature data
+message TemperatureData {
+    // Temperature value in degrees
+    float temperature = 1;
+    
+    // Unit of temperature measurement (e.g., Celsius, Fahrenheit)
+    string unit = 2;
+    
+    // Timestamp when the temperature data was recorded (Unix time in milliseconds)
+    int64 timestamp = 3;
+    
+    // Unique identifier of the temperature device
+    string device_id = 4;
+
+    // Version of the temperature data message format
+    string version = 5;
+}
