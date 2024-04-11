@@ -1,4 +1,4 @@
-#include <SampleMessage.pb.h>
+#include <protos/SampleMessage.pb.h>
 #include <iostream>
 
 int main()
