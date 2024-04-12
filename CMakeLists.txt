@@ -25,16 +25,12 @@ install(TARGETS protobuf_messages EXPORT protobuf_messages
     LIBRARY 
         DESTINATION ${CMAKE_INSTALL_LIBDIR}  # shared library
     ARCHIVE
-        DESTINATION ${CMAKE_INSTALL_LIBDIR} # static library
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}  # static library
+    PUBLIC_HEADER 
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 
 install(EXPORT protobuf_messages
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/protobuf_messages
     FILE protobuf_messages-config.cmake
-)
-
-install(DIRECTORY ${CMAKE_BINARY_DIR}/protos
-    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-    OPTIONAL
-    FILES_MATCHING PATTERN "*.pb.h"
 )

@@ -15,6 +15,8 @@ add_library(protobuf_messages SHARED
     ${PROTO_HDRS}
 )
 
+set_target_properties(protobuf_messages PROPERTIES PUBLIC_HEADER ${PROTO_HDRS})
+
 target_link_libraries(protobuf_messages INTERFACE protobuf::libprotobuf)
 
 target_include_directories(protobuf_messages 
