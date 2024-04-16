@@ -21,7 +21,7 @@ target_link_libraries(protobuf_messages INTERFACE protobuf::libprotobuf)
 
 target_include_directories(protobuf_messages 
     INTERFACE 
-        $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
 )
 
