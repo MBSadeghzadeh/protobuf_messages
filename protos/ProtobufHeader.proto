@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package protobuf_messages;
+
+enum HEADER_INFO {
+    MIN = 0;
+    SIZE = 8;
+}
+
+message Header {
+    int64 body_length = 1;
+}

@@ -4,7 +4,7 @@ set(CMAKE_DEBUG_POSTFIX d)
 find_package(Protobuf REQUIRED)
 
 # Set the path to the .proto file
-set(PROTO_FILES SampleMessage.proto)
+set(PROTO_FILES ProtobufHeader.proto SampleMessage.proto )
 
 # Generate C++ code from the .proto file
 protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS ${PROTO_FILES})
@@ -14,8 +14,10 @@ add_library(protobuf_messages SHARED
     ${PROTO_SRCS} 
     ${PROTO_HDRS}
 )
+foreach(PROTO_HDR ${PROTO_HDRS})
+    set_target_properties(protobuf_messages PROPERTIES PUBLIC_HEADER PROTO_HDR)
+endforeach(PROTO_HDR IN )
 
-set_target_properties(protobuf_messages PROPERTIES PUBLIC_HEADER ${PROTO_HDRS})
 
 target_link_libraries(protobuf_messages INTERFACE protobuf::libprotobuf)
 

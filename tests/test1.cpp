@@ -1,4 +1,6 @@
 #include <SampleMessage.pb.h>
+#include <ProtobufHeader.pb.h>
+
 #include <iostream>
 
 int main()
@@ -27,4 +29,6 @@ int main()
     std::cout << "Unit: " << deserialized_data.unit() << std::endl;
     std::cout << "Timestamp: " << deserialized_data.timestamp() << std::endl;
     std::cout << "Device ID: " << deserialized_data.device_id() << std::endl;
+    
+    assert(protobuf_messages::HEADER_INFO::SIZE == 8);
 }
